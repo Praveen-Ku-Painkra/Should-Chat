@@ -4,7 +4,7 @@ const initialState = {
   value: 0,
 }
 
-export const counterSlice = createSlice({
+export const chatSlice = createSlice({
   name: 'counter',
   initialState,
   reducers: {
@@ -21,6 +21,6 @@ export const counterSlice = createSlice({
 })
 
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
+export const { increment, decrement, incrementByAmount } = chatSlice.actions
 
-export default counterSlice.reducer
+export default chatSlice.reducer
