@@ -2,7 +2,7 @@ import React from 'react'
 import { useLocation } from 'react-router-dom'
 
 const Footer = () => {
-  if (useLocation().pathname === "/login") {
+  if ((useLocation().pathname === "/auth/login")||(useLocation().pathname === "/auth/signup")) {
     return null
   } else {
   return (
