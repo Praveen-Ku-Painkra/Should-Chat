@@ -1,5 +1,10 @@
 import React from 'react'
+import { useLocation } from 'react-router-dom'
+
 const Footer = () => {
+  if (useLocation().pathname === "/login") {
+    return null
+  } else {
   return (
     <footer className='border-y w-full'>
       <div className='flex justify-between items-center  m-8 lg:px-16'>
@@ -16,6 +21,7 @@ const Footer = () => {
       <div className=' flex items-center h-16 text-gray-400'><p> &#169;2023praveenkumarpainkra. All Rights Reserved.</p></div>
     </footer>
   )
+}
 }
 
 export default Footer
