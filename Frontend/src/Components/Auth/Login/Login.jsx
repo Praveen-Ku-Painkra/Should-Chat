@@ -19,7 +19,7 @@ function Login() {
   <div className="flex flex-col items-center justify-center min-h-screen bg-black">
   <div className="w-full max-w-sm p-6 bg-black text-white">
     <h1 className="text-2xl text-4xl font-bold ">Sign In</h1>
-    <p className="mb-6 text-gray-400">
+    <p className="mb-6 text-gray-400 text-2xl">
       New user? <NavLink to="/auth/signup" className="text-orange-500 hover:underline">Create an account</NavLink>
     </p>
     <form>
