@@ -1,15 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  value: 0,
+  personChats : [{id:"id1",msg:"Hello,im Praveen",from:"Praveen",to:"Ankit",creaded_at:"2/7/2025"},{id:"id1",msg:"Hello,im Ankit",from:"Ankit",to:"Praveen",creaded_at:"2/7/2025"}],
+  groupChats : []
 }
 
 export const chatSlice = createSlice({
-  name: 'counter',
+  name: 'chats',
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1
+    addChat: (state,payload) => {
+     state.personChats.push({name:"Praveen"})
     },
     decrement: (state) => {
       state.value -= 1
@@ -21,6 +22,6 @@ export const chatSlice = createSlice({
 })
 
 
-export const { increment, decrement, incrementByAmount } = chatSlice.actions
+export const { addChat, decrement, incrementByAmount } = chatSlice.actions
 
 export default chatSlice.reducer

@@ -5,10 +5,13 @@ import { NavLink } from "react-router-dom"
 function Login() {
   let [logInfo,setLogInfo] = useState({email:"",password:""})
 
-  let evtHandler = (evt)=>{
+  let evtHandler = async (evt)=>{
     let targetValue = evt.target.value
     let targetName = evt.target.name
-
+    let res = await fetch('/api/signup');
+    console.log(res)
+    let data = await res.json()
+    console.log(data)
     setLogInfo(preVal =>{
       preVal[targetName] = targetValue
       return {...preVal}

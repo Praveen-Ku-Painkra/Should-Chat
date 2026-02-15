@@ -6,19 +6,27 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Index from './Components/Index/Index.jsx'
 import Signup from './Components/Auth/Signin/Signup.jsx'
 import Login from './Components/Auth/Login/Login.jsx'
+import UserInfo from './Components/chats/layout/UserInfo.jsx'
+import ChatList from './Components/chats/layout/ChatList.jsx'
+import ChatBox from './Components/chats/ChatBox.jsx'
+import Test from './test/Test.jsx'
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='' element={<App/>}>
-      <Route path="/" element={<Index/>}/>
-      <Route path='auth'>
-      <Route path="signup" element={<Signup/>}/>
-      <Route path="login" element={<Login/>}/>
+    <Route path="" element={<App />}>
+      <Route path="/" element={<Index />} />
+      <Route path="auth">
+        <Route path="signup" element={<Signup />} />
+        <Route path="login" element={<Login />} />
       </Route>
-    </Route>
-  )
-)
+      <Route path="chat">
+        <Route path=":name" />
+      </Route>
+      <Route path='test' element={<ChatBox/>}/>
+    </Route>,
+  ),
+);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
