@@ -3,15 +3,18 @@ import UserInfo from "./UserInfo"
 
 
 function ChatList({chatsInfo,updateChats}) {
-  let res = chatsInfo.map(chat => chat.to)
-  let chatsList = [...new Set(res)].filter(el => el != "Praveen")
-  console.log(chatsList)
-  // let [chatsList,setChatList] = useState(reciverData)
-
-  
+   let [person,setPerson] = useState("")
+   let to = chatsInfo.map(chat => chat.to)
+   let from = chatsInfo.map(chat => chat.from)
+   let res = [...to,...from]
+   
+  let chatsList = [...new Set(res)].filter((el) => el != "Praveen")
+  function updateChatPerson(name){
+    setPerson(name)
+  }
   return (
-    <div className="h-screen w-xs p-2 bg-pink  bg-stone-900 border-orange-500 border-x-[0.01rem]" >
-      {chatsList.map(chatInfo =>  <UserInfo  name={chatInfo}  updateChats={updateChats}/>)}
+    <div className="h-screen w-xs p-2 bg-[#282e3a] flex flex-col gap-y-1 shadow-xl/50 shadow-[#15191C] shadow-indigo-500/50 border-r-1 border-[#3d4957] " >
+      {chatsList.map((chatInfo,idx) => <UserInfo key={idx} id={chatInfo} person={{person,updateChatPerson}}  updateChats={updateChats}/>)}
     </div>
   )
 }

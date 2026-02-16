@@ -7,8 +7,8 @@ function Chats({chats}) {
   // console.log()
   console.log(chats)
   return (
-    <div className=' w-full h-dvh flex flex-col p-8'>
-      {chats.map(chat => {return <p className={chat.from=="Praveen" ? 'self-end':""}>{chat.chat}</p>})}
+    <div className=' w-full h-dvh flex flex-col p-8 bg-[#15191C]'>
+      {chats.map((chat,idx) => {return <p key={idx}  className={chat.from=="Praveen" ? 'self-end':""}>{chat.chat}</p>})}
     </div>
   )
 }
