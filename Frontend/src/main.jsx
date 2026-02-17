@@ -23,7 +23,7 @@ const router = createBrowserRouter(
       <Route path="chat">
         <Route path=":name" />
       </Route>
-      <Route path='test' element={<ChatBox/>}/>
+      <Route path='test' element={<Test/>}/>
     </Route>,
   ),
 );

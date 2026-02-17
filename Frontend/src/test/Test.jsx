@@ -2,15 +2,14 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { addChat } from '../features/should-chat/chatSlice'
 function Test() {
-    const dispatch = useDispatch()
-    let chats = useSelector(state => state.chat.personChats)
-    console.log(chats)
-    let test = ()=>{
-        dispatch(addChat())
-    }
+   async function  sample(){
+    let res = await fetch("/api/test")
+    let data = await res.json()
+    console.log(data)
+   }
   return (
     <div>
-        <button onClick={test}>Click me!</button>
+        <button onClick={sample}>Click me!</button>
     </div>
   )
 }

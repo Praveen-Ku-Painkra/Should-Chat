@@ -2,10 +2,11 @@ const express = require('express')
 const app = express()
 const mongoose = require('mongoose');
 const cors = require('cors');
-const User = require("./model/users.js") 
+const User = require("./models/users.js") 
+const middleware = require("./middleware/middleware.js")
 
 ////controller
-const {signup, group} = require("./controller/users.js")
+const {signup, group, test} = require("./controller/users.js")
 
 main()
 .then(res =>console.log("DB connected"))
@@ -24,7 +25,9 @@ app.get("/",(req,res)=>{
     res.send("This is root route")
 })
 
-app.get("/api/test",group)
+app.get("/api/test",test)
+
+app.use(middleware.errHandler)
 
 app.listen(8080,()=>{
     console.log("App is listening on port 8080:")

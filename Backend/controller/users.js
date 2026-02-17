@@ -1,5 +1,6 @@
-const Group = require("../model/groups")
-const User = require("../model/users")
+const Group = require("../models/groups")
+const User = require("../models/users")
+const ExpressError = require("../utils/ExpressError")
 
 module.exports.signup = async (req,res)=>{
     res.json({"msg":"Hello world!"})
@@ -27,4 +28,12 @@ module.exports.group = async (req,res)=>{
     // let result = await Group.findByIdAndUpdate("699451427512e9994ab44e60",{name:"Bhayankar",members:(userArray.push())},{returnDocument:"after"});
 
     //  res.json({"name":result._id})
+}
+
+module.exports.test = (req,res,next)=>{
+    try {
+        abc =abc
+    } catch (error) {
+        return next(new ExpressError(402,"Acces"))
+    }
 }
