@@ -10,13 +10,14 @@ import UserInfo from './Components/chats/layout/UserInfo.jsx'
 import ChatList from './Components/chats/layout/ChatList.jsx'
 import ChatBox from './Components/chats/ChatBox.jsx'
 import Test from './test/Test.jsx'
+import Auth from './Components/Auth/defaultAuth/Auth.jsx'
 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="" element={<App />}>
       <Route path="/" element={<Index />} />
-      <Route path="auth">
+      <Route path="auth" element={<Auth/>}>
         <Route path="signup" element={<Signup />} />
         <Route path="login" element={<Login />} />
       </Route>

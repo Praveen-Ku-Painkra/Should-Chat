@@ -13,6 +13,11 @@ function Signin() {
    })
   }
 
+  let handleInput =(et)=>{
+    et.preventDefault()
+    console.log("name")
+  }
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black">
       <div className="w-full max-w-120 p-6 bg-black text-white">
@@ -23,7 +28,7 @@ function Signin() {
             Log In
           </NavLink>
         </p>
-        <form action="/login" method="">
+        <form action="/login" method="post" onSubmit={evtHandle}>
           <section className="name md:flex gap-2 ">
             <div>
               <label htmlFor="firstName" className="block mb-2 font-medium">
@@ -53,20 +58,6 @@ function Signin() {
             </div>
           </section>
           <section className="contact">
-            <div className="number">
-              <label htmlFor="phone" className="block mb-2 font-medium">
-                Phone Number
-              </label>
-              <input
-                inputMode="numeric"
-                pattern="[0-9]{10}"
-                id="number"
-                name="number"
-                onChange={evtHandle}
-                placeholder="Phone Number"
-                className="w-full px-4 py-2 mb-4  rounded focus:outline-none border border-[#232323] bg-[#000000] focus:border-[#A3A3A3] "
-              />
-            </div>
             <div className="email">
               <label htmlFor="email" className="block mb-2 font-medium">
                Email
@@ -77,6 +68,23 @@ function Signin() {
                 name="email"
                 onChange={evtHandle}
                 placeholder="Email"
+                className="w-full px-4 py-2 mb-4  rounded focus:outline-none border border-[#232323] bg-[#000000] focus:border-[#A3A3A3] "
+              />
+            </div>
+            <div className="number">
+              <label htmlFor="phone" className="block mb-2 font-medium">
+                Phone Number
+              </label>
+              <input
+                type="number"
+                onSubmit={handleInput}
+                min="50"
+                inputMode="numeric"
+                pattern="[0-9]{10}"
+                id="number"
+                name="number"
+                onChange={evtHandle}
+                placeholder="Phone Number"
                 className="w-full px-4 py-2 mb-4  rounded focus:outline-none border border-[#232323] bg-[#000000] focus:border-[#A3A3A3] "
               />
             </div>

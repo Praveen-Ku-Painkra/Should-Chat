@@ -4,12 +4,12 @@ import { Outlet } from 'react-router-dom'
 
 function Index() {
   return (
-    <div className='flex-col content-center'>
-        {/* <Header/> */}
-        <Outlet/>
-        {/* <Footer/> */}
+    <div className="flex-col content-center">
+      <Header />
+      <Outlet />
+      <Footer />
     </div>
-  )
+  );
 }
 
 export default Index
