@@ -30,10 +30,8 @@ module.exports.group = async (req,res)=>{
     //  res.json({"name":result._id})
 }
 
-module.exports.test = (req,res,next)=>{
-    try {
-        abc =abc
-    } catch (error) {
-        return next(new ExpressError(402,"Acces"))
-    }
+module.exports.test = async (req,res,next)=>{
+    
+        throw new ExpressError(405,req.path)
+   
 }
