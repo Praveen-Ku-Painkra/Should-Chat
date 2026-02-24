@@ -6,11 +6,10 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Index from './Components/Index/Index.jsx'
 import Signup from './Components/Auth/Signin/Signup.jsx'
 import Login from './Components/Auth/Login/Login.jsx'
-import UserInfo from './Components/chats/layout/UserInfo.jsx'
-import ChatList from './Components/chats/layout/ChatList.jsx'
 import ChatBox from './Components/chats/ChatBox.jsx'
 import Test from './test/Test.jsx'
 import Auth from './Components/Auth/defaultAuth/Auth.jsx'
+import {chatData} from "./Components/chats/ChatBox.jsx"
 
 
 const router = createBrowserRouter(
@@ -21,8 +20,7 @@ const router = createBrowserRouter(
         <Route path="signup" element={<Signup />} />
         <Route path="login" element={<Login />} />
       </Route>
-      <Route path="chat">
-        <Route path=":name" />
+      <Route path="chat" loader={chatData} element={<ChatBox/>}>
       </Route>
       <Route path='test' element={<Test/>}/>
     </Route>,

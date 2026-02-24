@@ -7,7 +7,7 @@ function Index() {
     <div className="flex-col content-center">
       <Header />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
