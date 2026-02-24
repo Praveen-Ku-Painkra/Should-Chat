@@ -6,7 +6,12 @@ const User = require("./models/users.js")
 const middleware = require("./middleware/middleware.js")
 
 ////controller
-const {signup, group, test} = require("./controller/users.js")
+const {signup} = require("./controller/users.js");
+const {show} = require("./controller/chats.js");
+const ExpressError = require('./utils/ExpressError.js');
+const wrapAsync = require('./utils/wrapAsync.js');
+
+app.use(express.json());
 
 main()
 .then(res =>console.log("DB connected"))
@@ -18,14 +23,15 @@ async function main() {
 }
 app.use(cors())
 
-app.get("/api/signup",signup)
+app.post("/api/signup",wrapAsync(signup))
+
+app.get("/api/chat/:id", wrapAsync(show))
 
 
-app.get("/",(req,res)=>{
-    res.send("This is root route")
+app.get("/api/signup",(req,res,next)=>{
+    throw next(new ExpressError(202,"new error"))
 })
 
-app.get("/api/test",test)
 
 app.use(middleware.errHandler)
 

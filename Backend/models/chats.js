@@ -3,11 +3,13 @@ const {Schema,model} = mongoose
 
 const chatsSchema = new Schema({
     from:{
-        type:mongoose.objectId,
+        type:mongoose.ObjectId,
+        ref:"user",
         required:true
     },
     to:{
-        type:mongoose.objectId,
+        type:mongoose.ObjectId,
+        ref:"user",
         required:true
     },
     msg:{
@@ -21,7 +23,5 @@ const chatsSchema = new Schema({
         required:true
     },
 })
-
-const Chat = model("chat",chatsSchema)
-
-module.exports = Chat
+ 
+module.exports = model("chat",chatsSchema)
