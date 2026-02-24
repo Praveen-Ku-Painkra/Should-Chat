@@ -10,7 +10,7 @@ function NewChats({id}) {
         let responce = await axios({
             method:"post",
             url:"/api/chat",
-            // data:{msg:chat,to:}
+            // data:{msg:chat,to:} /////chat
         })
         
     }
