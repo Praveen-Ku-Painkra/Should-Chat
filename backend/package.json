@@ -1,0 +1,24 @@
+{
+  "name": "shouldchat",
+  "version": "1.0.0",
+  "description": "This is my final year project.",
+  "license": "ISC",
+  "author": "Praveen Kumar Painkra",
+  "type": "commonjs",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon src/app.js",
+    "start": "node src/app.js",
+    "prod": "pm2 src/app.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^16.0.3",
+    "express": "^5.2.1",
+    "http-status": "^2.1.0",
+    "mongoose": "^9.2.3",
+    "socket.io": "^4.8.3",
+    "uuid": "^13.0.0"
+  }
+}
